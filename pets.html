@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Nossos Animais | Projeto Animal Campinas</title>
+    
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="index.js" defer></script>
+    <script src="https://unpkg.com/scrollreveal" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js" defer></script>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html" class="brand">
+            <h1>Projeto <b class="accent">Animal Campinas</b></h1>
+        </a>
+
+        <div class="menu">
+            <div class="btn">
+                <i class="fas fa-times close-btn"></i>
+            </div>
+            <a href="index.html">Home</a>
+            <a href="index.html#processo">Como Adotar</a>
+            
+            <a href="pets.html">Pets</a>
+            <a href="index.html#rifas">Rifas</a>
+            <a href="index.html#sobre">Sobre</a>
+            <a href="index.html#historias">Finais Felizes</a>
+        </div>
+
+        <button class="btn-2" onclick="location.href='index.html#doacao'">
+            <p>Doe Agora</p>
+            <i class="fa-solid fa-hand-holding-heart"></i>
+        </button>
+
+        <div class="btn">
+            <i class="fas fa-bars menu-btn"></i>
+        </div>
+    </nav>
+
+
+    <main>
+        <section class="pets" id="pets-page" style="padding-top: 120px;">
+            <div class="pets-headlines">
+                <i class="fa-solid fa-paw"></i>
+                <h1>Conheça todos os nossos resgatados</h1>
+            </div>
+
+            <div class="pets-collection">
+                
+                <div class="pet-item">
+                    <img class="img-pet" src="img/animas-adote/Felix.jpeg" alt="Cachorro Felix para adoção">
+                    <div class="pet-info-simple">
+                        <h3>Felix</h3>
+                        <button class="btn-3 btn-details" onclick="openModal('modal-felix')">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <div class="pet-item">
+                    <img class="img-pet" src="img/animas-adote/Flor.jpeg" alt="Cachorra Flor para adoção">
+                    <div class="pet-info-simple">
+                        <h3>Flor</h3>
+                        <button class="btn-3 btn-details" onclick="openModal('modal-flor')">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <div class="pet-item">
+                    <img class="img-pet" src="img/animas-adote/Ronie.jpeg" alt="Cachorro Ronie para adoção">
+                    <div class="pet-info-simple">
+                        <h3>Ronie</h3>
+                        <button class="btn-3 btn-details" onclick="openModal('modal-ronie')">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <div class="pet-item">
+                    <img class="img-pet" src="img/animas-adote/Zaya.jpeg" alt="Cachorra Zaya para adoção">
+                    <div class="pet-info-simple">
+                        <h3>Zaya</h3>
+                        <button class="btn-3 btn-details" onclick="openModal('modal-zaya')">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <div class="pet-item">
+                    <img class="img-pet" src="img/animas-adote/RAKAN.jpeg" alt="Cachorro Rakan para adoção">
+                    <div class="pet-info-simple">
+                        <h3>Rakan</h3>
+                        <button class="btn-3 btn-details" onclick="openModal('modal-rakan')">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <div class="pet-item">
+                    <img class="img-pet" src="img/animas-adote/Thanus.jpeg" alt="Cachorro Thanus para adoção">
+                    <div class="pet-info-simple">
+                        <h3>Thanus</h3>
+                        <button class="btn-3 btn-details" onclick="openModal('modal-thanus')">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <div class="pet-item">
+                    <img class="img-pet" src="img/animas-adote/Oreo.jpeg" alt="Cachorro Oreo para adoção">
+                    <div class="pet-info-simple">
+                        <h3>Oreo</h3>
+                        <button class="btn-3 btn-details" onclick="openModal('modal-oreo')">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <div class="pet-item">
+                    <img class="img-pet" src="img/animas-adote/Manga.jpeg" alt="Cachorro Manga para adoção">
+                    <div class="pet-info-simple">
+                        <h3>Manga</h3>
+                        <button class="btn-3 btn-details" onclick="openModal('modal-manga')">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <div class="pet-item">
+                    <img class="img-pet" src="img/animas-adote/Pedro.jpeg" alt="Cachorro Pedro para adoção">
+                    <div class="pet-info-simple">
+                        <h3>Pedro</h3>
+                        <button class="btn-3 btn-details" onclick="openModal('modal-pedro')">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <div class="pet-item">
+                    <img class="img-pet" src="img/animas-adote/Bidu.jpeg" alt="Cachorro Bidu para adoção">
+                    <div class="pet-info-simple">
+                        <h3>Bidu</h3>
+                        <button class="btn-3 btn-details" onclick="openModal('modal-bidu')">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <div class="pet-item">
+                    <img class="img-pet" src="img/animas-adote/Monique.jpeg" alt="Cachorra Monique para adoção">
+                    <div class="pet-info-simple">
+                        <h3>Monique</h3>
+                        <button class="btn-3 btn-details" onclick="openModal('modal-monique')">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <div class="pet-item">
+                    <img class="img-pet" src="img/animas-adote/Luck.jpeg" alt="Cachorro Luck para adoção">
+                    <div class="pet-info-simple">
+                        <h3>Luck</h3>
+                        <button class="btn-3 btn-details" onclick="openModal('modal-luck')">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <div class="pet-item">
+                    <img class="img-pet" src="img/animas-adote/Goncaoo.jpeg" alt="Cachorro Gonçãao para adoção">
+                    <div class="pet-info-simple">
+                        <h3>Gonçãao</h3>
+                        <button class="btn-3 btn-details" onclick="openModal('modal-goncaoo')">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <div class="pet-item">
+                    <img class="img-pet" src="img/animas-adote/Mavi.jpeg" alt="Cachorra Mavi para adoção">
+                    <div class="pet-info-simple">
+                        <h3>Mavi</h3>
+                        <button class="btn-3 btn-details" onclick="openModal('modal-mavi')">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <div class="pet-item">
+                    <img class="img-pet" src="img/animas-adote/Greg.jpeg" alt="Cachorro Greg para adoção">
+                    <div class="pet-info-simple">
+                        <h3>Greg</h3>
+                        <button class="btn-3 btn-details" onclick="openModal('modal-greg')">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <div class="pet-item">
+                    <img class="img-pet" src="img/animas-adote/Lilico.jpeg" alt="Cachorro Lilico para adoção">
+                    <div class="pet-info-simple">
+                        <h3>Lilico</h3>
+                        <button class="btn-3 btn-details" onclick="openModal('modal-lilico')">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <div class="pet-item">
+                    <img class="img-pet" src="img/animas-adote/Barao.jpeg" alt="Cachorro Barão para adoção">
+                    <div class="pet-info-simple">
+                        <h3>Barão</h3>
+                        <button class="btn-3 btn-details" onclick="openModal('modal-barao')">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <div class="pet-item">
+                    <img class="img-pet" src="img/animas-adote/Marrom.jpeg" alt="Cachorro Marrom para adoção">
+                    <div class="pet-info-simple">
+                        <h3>Marrom</h3>
+                        <button class="btn-3 btn-details" onclick="openModal('modal-marrom')">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <div class="pet-item">
+                    <img class="img-pet" src="img/animas-adote/Charles.jpeg" alt="Cachorro Charles para adoção">
+                    <div class="pet-info-simple">
+                        <h3>Charles</h3>
+                        <button class="btn-3 btn-details" onclick="openModal('modal-charles')">Ver Detalhes</button>
+                    </div>
+                </div>
+                
+
+            </div> </section>
+    </main>
+
+    <div id="modal-felix" class="modal-container">
+        <div class="modal-content">
+            <button class="modal-close-btn" onclick="closeModal('modal-felix')">&times;</button>
+            <img class="img-pet-modal" src="img/animas-adote/Felix.jpeg" alt="Felix">
+            <div class="pet-info">
+                <h3>Felix</h3>
+                <div class="pet-tags">
+                    <span>11 anos</span>
+                    <span>7kg</span>
+                    <span>Cuidados Especiais</span>
+                </div>
+                <p class="pet-description">
+                    Extremamente medroso. Infelizmente passou a vida toda negligenciado e hoje morre de medo de humanos!
+                </p>
+                <a href="https://wa.me/5519999998888?text=Ol%C3%A1!%20Tenho%20interesse%20em%20adotar%20o%20Felix.%20Podemos%20conversar%3F" target="_blank" class="btn-3 btn-adotar">
+                    Quero Adotar o Felix
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-flor" class="modal-container">
+        <div class="modal-content">
+            <button class="modal-close-btn" onclick="closeModal('modal-flor')">&times;</button>
+            <img class="img-pet-modal" src="img/animas-adote/Flor.jpeg" alt="Flor">
+            <div class="pet-info">
+                <h3>Flor</h3>
+                <div class="pet-tags">
+                    <span>2 anos</span>
+                    <span>22kg</span>
+                    <span>Castrada e Vacinada</span>
+                </div>
+                <p class="pet-description">
+                    Extremamente dócil e amorosa. Ela merece ter uma família!
+                </p>
+                <a href="https://wa.me/5519999998888?text=Ol%C3%A1!%20Tenho%20interesse%20em%20adotar%20a%20Flor.%20Podemos%20conversar%3F" target="_blank" class="btn-3 btn-adotar">
+                    Quero Adotar a Flor
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-ronie" class="modal-container">
+        <div class="modal-content">
+            <button class="modal-close-btn" onclick="closeModal('modal-ronie')">&times;</button>
+            <img class="img-pet-modal" src="img/animas-adote/Ronie.jpeg" alt="Ronie">
+            <div class="pet-info">
+                <h3>Ronie</h3>
+                <div class="pet-tags">
+                    <span>6 anos</span>
+                    <span>28kg</span>
+                    <span>Castrado e Vacinado</span>
+                </div>
+                <p class="pet-description">
+                    Dócil. Ele merece ter uma família!
+                </p>
+                <a href="https://wa.me/5519999998888?text=Ol%C3%A1!%20Tenho%20interesse%20em%20adotar%20o%20Ronie.%20Podemos%20conversar%3F" target="_blank" class="btn-3 btn-adotar">
+                    Quero Adotar o Ronie
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-zaya" class="modal-container">
+        <div class="modal-content">
+            <button class="modal-close-btn" onclick="closeModal('modal-zaya')">&times;</button>
+            <img class="img-pet-modal" src="img/animas-adote/Zaya.jpeg" alt="Zaya">
+            <div class="pet-info">
+                <h3>Zaya</h3>
+                <div class="pet-tags">
+                    <span>5 anos</span>
+                    <span>24kg</span>
+                    <span>Adoção Conjunta</span>
+                </div>
+                <p class="pet-description">
+                    Precisa ser adoção conjunta com o Rakan. Ela merece ter uma família!
+                </p>
+                <a href="https://wa.me/5519999998888?text=Ol%C3%A1!%20Tenho%20interesse%20na%20ado%C3%A7%C3%A3o%20conjunta%20da%20Zaya%20e%20do%20Rakan.%20Podemos%20conversar%3F" target="_blank" class="btn-3 btn-adotar">
+                    Quero Adotar a Zaya
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-rakan" class="modal-container">
+        <div class="modal-content">
+            <button class="modal-close-btn" onclick="closeModal('modal-rakan')">&times;</button>
+            <img class="img-pet-modal" src="img/animas-adote/RAKAN.jpeg" alt="Rakan">
+            <div class="pet-info">
+                <h3>Rakan</h3>
+                <div class="pet-tags">
+                    <span>3 anos</span>
+                    <span>27kg</span>
+                    <span>Adoção Conjunta</span>
+                </div>
+                <p class="pet-description">
+                    Precisa ser adoção conjunta com a mãe dele, Zaya. Ele merece ter uma família!
+                </p>
+                <a href="https://wa.me/5519999998888?text=Ol%C3%A1!%20Tenho%20interesse%20na%20ado%C3%A7%C3%A3o%20conjunta%20do%20Rakan%20e%20da%20Zaya.%20Podemos%20conversar%3F" target="_blank" class="btn-3 btn-adotar">
+                    Quero Adotar o Rakan
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-thanus" class="modal-container">
+        <div class="modal-content">
+            <button class="modal-close-btn" onclick="closeModal('modal-thanus')">&times;</button>
+            <img class="img-pet-modal" src="img/animas-adote/Thanus.jpeg" alt="Thanus">
+            <div class="pet-info">
+                <h3>Thanus</h3>
+                <div class="pet-tags">
+                    <span>10 anos</span>
+                    <span>27kg</span>
+                    <span>Cuidados Especiais</span>
+                </div>
+                <p class="pet-description">
+                    Precisa de fisio (rosto), já sofreu AVC. Uso contínuo de medicamento.
+                </p>
+                <a href="https://wa.me/5519999998888?text=Ol%C3%A1!%20Tenho%20interesse%20em%20adotar%20o%20Thanus.%20Podemos%20conversar%3F" target="_blank" class="btn-3 btn-adotar">
+                    Quero Adotar o Thanus
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-oreo" class="modal-container">
+        <div class="modal-content">
+            <button class="modal-close-btn" onclick="closeModal('modal-oreo')">&times;</button>
+            <img class="img-pet-modal" src="img/animas-adote/Oreo.jpeg" alt="Oreo">
+            <div class="pet-info">
+                <h3>Oreo</h3>
+                <div class="pet-tags">
+                    <span>3 anos</span>
+                    <span>15kg</span>
+                    <span>Castrado e Vacinado</span>
+                </div>
+                <p class="pet-description">
+                    Já venceu a cinomose. Se dá bem com outros cães. Ele merece ter uma família!
+                </p>
+                <a href="https://wa.me/5519999998888?text=Ol%C3%A1!%20Tenho%20interesse%20em%20adotar%20o%20Oreo.%20Podemos%20conversar%3F" target="_blank" class="btn-3 btn-adotar">
+                    Quero Adotar o Oreo
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-manga" class="modal-container">
+        <div class="modal-content">
+            <button class="modal-close-btn" onclick="closeModal('modal-manga')">&times;</button>
+            <img class="img-pet-modal" src="img/animas-adote/Manga.jpeg" alt="Manga">
+            <div class="pet-info">
+                <h3>Manga</h3>
+                <div class="pet-tags">
+                    <span>13kg</span>
+                    <span>Cuidados Especiais</span>
+                    <span>Castrado e Vacinado</span>
+                </div>
+                <p class="pet-description">
+                    Discopatia em cervical, instabilidade, controle de peso e medicação contínua. Com a idade terá necessidade de fisio.
+                </p>
+                <a href="https://wa.me/5519999998888?text=Ol%C3%A1!%20Tenho%20interesse%20em%20adotar%20o%20Manga.%20Podemos%20conversar%3F" target="_blank" class="btn-3 btn-adotar">
+                    Quero Adotar o Manga
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-pedro" class="modal-container">
+        <div class="modal-content">
+            <button class="modal-close-btn" onclick="closeModal('modal-pedro')">&times;</button>
+            <img class="img-pet-modal" src="img/animas-adote/Pedro.jpeg" alt="Pedro">
+            <div class="pet-info">
+                <h3>Pedro</h3>
+                <div class="pet-tags">
+                    <span>10 meses</span>
+                    <span>Porte Médio</span>
+                    <span>Vacinado</span>
+                </div>
+                <p class="pet-description">
+                    Extremamente dócil e amoroso. Castração agendada.
+                </p>
+                <a href="https://wa.me/5519999998888?text=Ol%C3%A1!%20Tenho%20interesse%20em%20adotar%20o%20Pedro.%20Podemos%20conversar%3F" target="_blank" class="btn-3 btn-adotar">
+                    Quero Adotar o Pedro
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-bidu" class="modal-container">
+        <div class="modal-content">
+            <button class="modal-close-btn" onclick="closeModal('modal-bidu')">&times;</button>
+            <img class="img-pet-modal" src="img/animas-adote/Bidu.jpeg" alt="Bidu">
+            <div class="pet-info">
+                <h3>Bidu</h3>
+                <div class="pet-tags">
+                    <span>8 anos</span>
+                    <span>Cuidados Especiais</span>
+                </div>
+                <p class="pet-description">
+                    Incontinência (fecal/urinária) por atropelamento. Precisa de fisio e ajuda para urinar.
+                </p>
+                <a href="https://wa.me/5519999998888?text=Ol%C3%A1!%20Tenho%20interesse%20em%20adotar%20o%20Bidu.%20Podemos%20conversar%3F" target="_blank" class="btn-3 btn-adotar">
+                    Quero Adotar o Bidu
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-monique" class="modal-container">
+        <div class="modal-content">
+            <button class="modal-close-btn" onclick="closeModal('modal-monique')">&times;</button>
+            <img class="img-pet-modal" src="img/animas-adote/Monique.jpeg" alt="Monique">
+            <div class="pet-info">
+                <h3>Monique</h3>
+                <div class="pet-tags">
+                    <span>5 anos</span>
+                    <span>22kg</span>
+                    <span>Castrada e Vacinada</span>
+                </div>
+                <p class="pet-description">
+                    Extremamente dócil e amorosa. Ela merece ter uma família!
+                </p>
+                <a href="https://wa.me/5519999998888?text=Ol%C3%A1!%20Tenho%20interesse%20em%20adotar%20a%20Monique.%20Podemos%20conversar%3F" target="_blank" class="btn-3 btn-adotar">
+                    Quero Adotar a Monique
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-luck" class="modal-container">
+        <div class="modal-content">
+            <button class="modal-close-btn" onclick="closeModal('modal-luck')">&times;</button>
+            <img class="img-pet-modal" src="img/animas-adote/Luck.jpeg" alt="Luck">
+            <div class="pet-info">
+                <h3>Luck</h3>
+                <div class="pet-tags">
+                    <span>7 anos</span>
+                    <span>18kg</span>
+                    <span>Castrado e Vacinado</span>
+                </div>
+                <p class="pet-description">
+                    Dócil e muito amoroso. Se da bem com todo mundo.
+                </p>
+                <a href="https://wa.me/5519999998888?text=Ol%C3%A1!%20Tenho%20interesse%20em%20adotar%20o%20Luck.%20Podemos%20conversar%3F" target="_blank" class="btn-3 btn-adotar">
+                    Quero Adotar o Luck
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-goncaoo" class="modal-container">
+        <div class="modal-content">
+            <button class="modal-close-btn" onclick="closeModal('modal-goncaoo')">&times;</button>
+            <img class="img-pet-modal" src="img/animas-adote/Goncaoo.jpeg"alt="Gonçãao">
+            <div class="pet-info">
+                <h3>Gonçãao</h3>
+                <div class="pet-tags">
+                    <span>13 anos</span>
+                    <span>22kg</span>
+                    <span>Castrado e Vacinado</span>
+                </div>
+                <p class="pet-description">
+                    O grande companheiro da Gabi que veio junto com ela no mesmo resgate.
+                </p>
+                <a href="https://wa.me/5519999998888?text=Ol%C3%A1!%20Tenho%20interesse%20em%20adotar%20o%20Gon%C3%A7%C3%A3ao.%20Podemos%20conversar%3F" target="_blank" class="btn-3 btn-adotar">
+                    Quero Adotar o Gonçãao
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-mavi" class="modal-container">
+        <div class="modal-content">
+            <button class="modal-close-btn" onclick="closeModal('modal-mavi')">&times;</button>
+            <img class="img-pet-modal" src="img/animas-adote/Mavi.jpeg" alt="Mavi">
+            <div class="pet-info">
+                <h3>Mavi</h3>
+                <div class="pet-tags">
+                    <span>2 anos</span>
+                    <span>16kg</span>
+                </div>
+                <p class="pet-description">
+                    Extremamente dócil e amorosa, ideal para ser sua companheira.
+                </p>
+                <a href="https://wa.me/5519999998888?text=Ol%C3%A1!%20Tenho%20interesse%20em%20adotar%20a%20Mavi.%20Podemos%20conversar%3F" target="_blank" class="btn-3 btn-adotar">
+                    Quero Adotar a Mavi
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-greg" class="modal-container">
+        <div class="modal-content">
+            <button class="modal-close-btn" onclick="closeModal('modal-greg')">&times;</button>
+            <img class="img-pet-modal" src="img/animas-adote/Greg.jpeg" alt="Greg">
+            <div class="pet-info">
+                <h3>Greg</h3>
+                <div class="pet-tags">
+                    <span>7 anos</span>
+                    <span>8kg</span>
+                    <span>Cuidados Especiais</span>
+                </div>
+                <p class="pet-description">
+                    Tem muito medo, então pode morder. Não se da bem com todos os cães. Toma medicação diária.
+                </p>
+                <a href="https://wa.me/5519999998888?text=Ol%C3%A1!%20Tenho%20interesse%20em%20adotar%20o%20Greg.%20Podemos%20conversar%3F" target="_blank" class="btn-3 btn-adotar">
+                    Quero Adotar o Greg
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-lilico" class="modal-container">
+        <div class="modal-content">
+            <button class="modal-close-btn" onclick="closeModal('modal-lilico')">&times;</button>
+            <img class="img-pet-modal" src="img/animas-adote/Lilico.jpeg" alt="Lilico">
+            <div class="pet-info">
+                <h3>Lilico</h3>
+                <div class="pet-tags">
+                    <span>4 anos</span>
+                    <span>12kg</span>
+                    <span>Castrado e Vacinado</span>
+                </div>
+                <p class="pet-description">
+                    Dócil e muito amoroso. Se da bem com todo mundo.
+                </p>
+                <a href="https://wa.me/5519999998888?text=Ol%C3%A1!%20Tenho%20interesse%20em%20adotar%20o%20Lilico.%20Podemos%20conversar%3F" target="_blank" class="btn-3 btn-adotar">
+                    Quero Adotar o Lilico
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-barao" class="modal-container">
+        <div class="modal-content">
+            <button class="modal-close-btn" onclick="closeModal('modal-barao')">&times;</button>
+            <img class="img-pet-modal" src="img/animas-adote/Barao.jpeg" alt="Barão">
+            <div class="pet-info">
+                <h3>Barão</h3>
+                <div class="pet-tags">
+                    <span>4 anos</span>
+                    <span>15kg</span>
+                </div>
+                <p class="pet-description">
+                    Extremamente dócil, companheiro e precisa muito de um lar.
+                </p>
+                <a href="https://wa.me/5519999998888?text=Ol%C3%A1!%20Tenho%20interesse%20em%20adotar%20o%20Bar%C3%A3o.%20Podemos%20conversar%3F" target="_blank" class="btn-3 btn-adotar">
+                    Quero Adotar o Barão
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-marrom" class="modal-container">
+        <div class="modal-content">
+            <button class="modal-close-btn" onclick="closeModal('modal-marrom')">&times;</button>
+            <img class="img-pet-modal" src="img/animas-adote/Marrom.jpeg" alt="Marrom">
+            <div class="pet-info">
+                <h3>Marrom</h3>
+                <div class="pet-tags">
+                    <span>8 anos</span>
+                    <span>22kg</span>
+                    <span>Castrado e Vacinado</span>
+                </div>
+                <p class="pet-description">
+                    Extremamente companheiro, mega tranquilo, se da bem em qualquer ambiente e com outros cães.
+                </p>
+                <a href="https://wa.me/5519999998888?text=Ol%C3%A1!%20Tenho%20interesse%20em%20adotar%20o%20Marrom.%20Podemos%20conversar%3F" target="_blank" class="btn-3 btn-adotar">
+                    Quero Adotar o Marrom
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-charles" class="modal-container">
+        <div class="modal-content">
+            <button class="modal-close-btn" onclick="closeModal('modal-charles')">&times;</button>
+            <img class="img-pet-modal" src="img/animas-adote/Charles.jpeg" alt="Charles">
+            <div class="pet-info">
+                <h3>Charles</h3>
+                <div class="pet-tags">
+                    <span>8 anos</span>
+                    <span>27kg</span>
+                    <span>Castrado e Vacinado</span>
+                </div>
+                <p class="pet-description">
+                    Extremamente dócil e se da bem com todos os cães de todos os tamanhos.
+                </p>
+                <a href="https://wa.me/5519999998888?text=Ol%C3%A1!%20Tenho%20interesse%20em%20adotar%20o%20Charles.%20Podemos%20conversar%3F" target="_blank" class="btn-3 btn-adotar">
+                    Quero Adotar o Charles
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <h2>Quick links</h2>
+                <div class="links-container">
+                    <div class="links">
+                        <a href="index.html">Home</a>
+                        <a href="index.html#sobre">Sobre</a>
+                        
+                        <a href="pets.html">Pets</a>
+                    </div>
+
+                    <div class="links">
+                        <a href="index.html#processo">Como Adotar</a>
+                        <a href="index.html#historias">Finais Felizes</a>
+                        <a href="#footer">Contato</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-brand">
+                <h1>Projeto <b class="accent">Animal Campinas</b></h1>
+                <p>Encontre seu parceiro perfeito hoje mesmo!</p>
+                <div class="social">
+                    <a href="https://www.instagram.com/projetoanimalcampinas/" target="_blank" title="Instagram"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="/" title="Tiktok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="/" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="/" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-doacao" id="footer-doacao">
+                <h2>Ajude a Causa</h2>
+                <p>Sua doação salva vidas. Contribua via PIX!</p>
+                <div class="pix-info">
+                    <i class="fa-solid fa-key"></i>
+                    <p>CNPJ: 28.283.471/0001-23</p>
+                </div>
+                <p>Projeto Animal Campinas</p>
+            </div>
+
+            <div class="footer-contato-info">
+                <div class="contato-info-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <p>projetoanimalcampinas@gmail.com</p>
+                </div>
+                <div class="contato-info-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <p>+19-99999-8888</p>
+                </div>
+            </div>
+        </div>
+        <p class="copyright">All Rights Reserved to <b>Projeto Animal Campinas</b></p>
+    </footer>
+
+ 
+
+</body>
+
+</html>

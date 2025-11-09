@@ -1,0 +1,1393 @@
+/* For Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+:root {
+    /* Cor principal da marca */
+    --accent: #00A09A;
+    --black: #131313;
+    --light-bg: #f9f9f9;
+}
+
+html {
+    /* Garante que a rolagem suave funcione */
+    scroll-behavior: smooth;
+    /* Adiciona espaço no topo ao navegar por âncoras, evitando que o menu fixo cubra o título */
+    scroll-padding-top: 100px;
+}
+
+body {
+    min-height: 100vh;
+}
+
+main {
+    /* Adicionado para garantir que o 'main' comece após o nav fixo */
+    padding-top: 93px;
+    overflow-x: hidden; /* Evita rolagem horizontal */
+}
+
+section {
+    width: 100%;
+    /* Min-height 100vh é muito, vamos usar padding */
+    padding: 100px 5%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* - Navbar - */
+nav {
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--black);
+    background-color: white;
+    padding: 20px 50px;
+    transition: all 0.4 ease-out;
+    filter: drop-shadow(5px 5px 10px transparent);
+}
+
+nav.sticky {
+    background-color: white;
+    filter: drop-shadow(5px 5px 10px #00a09a4a);
+}
+
+.brand {
+    text-decoration: none;
+    transition: all ease-in-out 0.3;
+    color: var(--black);
+}
+
+.brand h1 {
+    font-size: 1.8rem; /* Reduzido para melhor responsividade */
+    font-weight: 900;
+}
+
+.brand:hover {
+    opacity: 0.8;
+}
+
+.accent {
+    color: var(--accent);
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px; /* Reduzido */
+}
+
+.menu a {
+    display: inline-block;
+    position: relative;
+    color: var(--black);
+    text-decoration: none;
+    font-size: 1.1rem; /* Padronizado */
+    font-weight: 600; /* Corrigido */
+    border-radius: 32px;
+    background-color: white;
+    padding: 8px 12px; /* Ajustado */
+    transition: all 0.2s ease-out;
+}
+
+.menu a:hover {
+    background-color: var(--accent);
+    color: white;
+}
+
+.btn {
+    color: var(--black); /* Corrigido para ser visível */
+    font-size: 25px;
+    cursor: pointer;
+    display: none; /* Escondido por padrão, aparece no mobile */
+}
+
+.btn-2 {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 1.1rem; /* Padronizado */
+    font-weight: 600;
+    color: var(--black);
+    transition: all ease-in-out 0.2s;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-2 i {
+    font-size: 1.5rem; /* Padronizado */
+    transition: all 0.2s ease-out;
+}
+
+.btn-2:hover i {
+    color: var(--accent);
+}
+
+.btn-2:hover {
+    gap: 10px;
+}
+
+/* - Hero Section - */
+.heropage {
+    /* Removido margin-top, 'main' cuida disso */
+    min-height: calc(100vh - 93px); /* Calcula altura da tela menos o nav */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centraliza verticalmente */
+    background-image: url("img/hero-background-image.png");
+}
+
+.hero-headlines {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 750px;
+    text-align: center;
+    padding: 0 20px; /* Adicionado para mobile */
+}
+
+.hero-headlines h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+.hero-headlines p {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.hero-headlines-buttons {
+    display: flex;
+    gap: 24px;
+    margin-top: 24px;
+    flex-wrap: wrap; /* Adicionado para mobile */
+    justify-content: center;
+}
+
+.btn-3 {
+    width: 205px;
+    height: 53px;
+    background-color: var(--black);
+    font-size: 1.2rem; /* Padronizado */
+    color: white;
+    border-radius: 12px;
+    border: 1px solid var(--black);
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+    display: flex; /* Para centralizar ícones se houver */
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-3:hover {
+    background-color: var(--accent);
+    border: 1px solid var(--accent);
+}
+
+.btn-transparent {
+    background-color: transparent;
+    color: var(--black);
+}
+
+.btn-transparent:hover {
+    background-color: var(--accent);
+    color: white;
+}
+
+.hero-imagens {
+    display: flex;
+    margin-top: 56px;
+    gap: 1.5rem;
+}
+
+.hero-imagens img {
+    max-width: 200px; /* Adicionado para controle */
+    height: auto;
+    border-radius: 10px;
+}
+
+
+/* --- Seção Processo de Adoção --- */
+.processo {
+    text-align: center;
+    background-color: var(--light-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.processo-headlines h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 900;
+}
+.processo-headlines p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+.processo-img {
+    max-width: 100%;
+    width: 1200px; /* Limita o tamanho máximo */
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Pets Section */
+.pets {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pets-headlines {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 50px; /* Adicionado espaçamento */
+}
+
+.pets-headlines i {
+    font-size: 50px;
+    color: var(--accent); /* CORRIGIDO */
+}
+
+.pets-headlines h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+.pets-collection {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap; /* Adicionado para responsividade */
+    justify-content: center;
+}
+
+/* NOVO Estilo de Pet-Item */
+.pet-item {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 350px; /* Define um tamanho máximo */
+    transition: 0.3s ease-out;
+}
+.pet-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+.img-pet {
+    width: 100%;
+    height: 300px; /* Altura fixa para as imagens */
+    object-fit: cover; /* Garante que a imagem cubra o espaço */
+}
+
+.pet-info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Faz o info crescer e empurrar o botão para baixo */
+}
+.pet-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+}
+.pet-tags {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+.pet-tags span {
+    background-color: #00a09a2a; /* Verde da marca com opacidade */
+    color: var(--accent);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+.pet-description {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* Faz a descrição crescer */
+}
+.btn-adotar {
+    width: 100%;
+    margin-top: auto; /* Empurra o botão para o final do card */
+}
+
+.btn-pets {
+    width: 269px;
+    height: 60px; /* Corrigido */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 12px; /* Padronizado */
+    margin-top: 48px;
+}
+
+/* --- Seção Rifas e Instagram --- */
+.rifas-insta {
+    background-color: var(--light-bg);
+    text-align: center;
+}
+.rifas-insta .pets-headlines {
+    margin-bottom: 3rem;
+}
+.rifas-insta .pets-headlines p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-top: 0.5rem;
+}
+.rifas-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+.rifa-card {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 2rem;
+    max-width: 450px;
+    width: 100%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    text-align: left;
+}
+.rifa-card h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--black);
+    font-weight: 800;
+}
+.rifa-card p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+.rifa-card .btn-3 {
+    background-color: var(--black);
+    color: #fff;
+    width: auto; /* Tamanho automático */
+    padding: 0 1.5rem;
+}
+.rifa-card .btn-3:hover {
+    background-color: var(--accent);
+    color: #fff;
+}
+
+/* --- Seção Doação Dedicada --- */
+.doacao {
+    background-color: var(--black);
+    color: #fff;
+    text-align: center;
+}
+.doacao-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+.doacao-container .fa-hand-holding-heart {
+    font-size: 3rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+.doacao-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 900;
+}
+.doacao-container p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #ddd;
+}
+.doacao-pix {
+    background: #fff;
+    color: var(--black);
+    border-radius: 15px;
+    padding: 2rem;
+}
+.doacao-pix h3 {
+    font-size: 1rem;
+    color: #555;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+.pix-key {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--light-bg);
+    border-radius: 8px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+#pix-key-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--black);
+    margin: 0;
+    margin-right: 1rem;
+    /* Permite quebra de linha em mobile */
+    word-break: break-all;
+}
+.btn-copy-pix {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.2s ease;
+}
+.btn-copy-pix:hover {
+    background: #007a75;
+}
+.doacao-pix h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+
+/* Sobre section */
+.sobre {
+    display: flex;
+    padding: 0 5%; /* Padronizado */
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Adicionado */
+}
+
+.sobre-headlines {
+    display: flex;
+    flex-direction: column;
+    max-width: 885px; /* Corrigido */
+    width: 100%;
+}
+
+.sobre-headlines h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+.sobre-headlines p {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-top: 1rem;
+}
+
+.sobre-info {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    gap: 40px; /* Reduzido */
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.sobre-info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sobre-info-item h5 {
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.sobre-info-item h6 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.sobre-headlines button {
+    margin-top: 48px;
+    max-width: 205px; /* Garante que não estique */
+}
+
+.img-sobre {
+    width: 280px;
+    height: auto;
+    border-radius: 15px;
+}
+
+
+/* testimonials section */
+.testimunhas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--light-bg);
+}
+
+.testimunhas h6 {
+    font-size: 1.5rem; /* Ajustado */
+    font-weight: 800;
+    color: var(--accent);
+}
+
+.testimunhas h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-align: center;
+}
+
+.testimunhas-container {
+    display: flex;
+    margin-top: 34px;
+    gap: 24px;
+    flex-wrap: wrap; /* Adicionado */
+    justify-content: center;
+}
+
+.testimunhas-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 430px;
+    min-height: 222px; /* Alterado para min-height */
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px 32px;
+}
+
+.testimunhas-pessoa {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.testimunhas-pessoa i {
+    font-size: 50px;
+    color: var(--accent);
+}
+
+.testimunhas-nome {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+.testimunhas-nome img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.testimunhas-nome h4 {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.testimunhas-nome p {
+    opacity: 0.8;
+}
+
+.testimunhas-text {
+    font-weight: 600;
+    margin-top: 28px;
+    font-style: italic;
+    color: #333;
+}
+
+/* footer */
+footer {
+    background-color: var(--black);
+    color: white;
+    padding: 50px 5%; /* Padronizado */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0; /* Removido margin-top, 'section' cuida disso */
+    overflow: hidden;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Distribui melhor */
+    gap: 30px;
+    width: 100%;
+    max-width: 1300px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 30px;
+}
+
+.footer-links,
+.footer-doacao,
+.footer-contato-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border: none; /* Removido bordas internas */
+    padding: 0;
+    flex-basis: 250px; /* Define uma base para os itens */
+    flex-grow: 1;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: none;
+    padding: 0;
+    flex-basis: 300px;
+    flex-grow: 2; /* Ocupa mais espaço */
+}
+
+.footer-links h2 {
+    font-size: 1.5rem; /* Ajustado */
+    font-weight: 800;
+}
+
+.links-container {
+    display: flex;
+    gap: 40px; /* Reduzido */
+    font-size: 1rem; /* CORRIGIDO */
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease-out;
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.links a:hover {
+    color: var(--accent);
+    opacity: 1;
+}
+
+.footer-brand h1 {
+    font-size: 2rem; /* Ajustado */
+    font-weight: 800;
+}
+
+.footer-brand p {
+    font-size: 1.1rem; /* Ajustado */
+    opacity: 0.8;
+}
+
+.social {
+    display: flex;
+    gap: 16px; /* Ajustado */
+    margin-top: 14px;
+}
+
+.social a {
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    padding: 8px 12px;
+    background-color: var(--black);
+    transition: all 0.3s ease-out;
+    font-size: 1.2rem;
+}
+
+.social a:hover {
+    background-color: var(--accent);
+    border-color: var(--accent);
+}
+
+.footer-doacao h2 {
+    font-size: 1.5rem; /* Ajustado */
+    font-weight: 800;
+    color: var(--accent);
+}
+
+.footer-doacao p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.pix-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #333;
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin-top: 5px;
+}
+
+.pix-info i {
+    font-size: 18px;
+    color: var(--accent);
+}
+
+.pix-info p {
+    font-size: 1rem; /* Ajustado */
+    font-weight: 600;
+    word-break: break-all; /* Quebra a chave se for longa */
+}
+
+.contato-info-item {
+    display: flex;
+    gap: 13px;
+    align-items: center;
+}
+
+.contato-info-item i {
+    font-size: 1.2rem; /* Ajustado */
+    color: var(--accent);
+}
+
+.contato-info-item p {
+    font-size: 1rem; /* Ajustado */
+    word-break: break-all;
+}
+
+.copyright {
+    margin-top: 30px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    text-align: center;
+}
+
+
+/* ########## RESPONSIVIDADE ########## */
+
+/* --- Tablet --- */
+@media (max-width: 1024px) {
+    .menu {
+        gap: 20px;
+    }
+    .menu a {
+        font-size: 1rem;
+        padding: 8px 10px;
+    }
+    .brand h1 {
+        font-size: 1.5rem;
+    }
+    .btn-2 {
+        font-size: 1rem;
+        gap: 10px;
+    }
+    .btn-2 i {
+        font-size: 1.3rem;
+    }
+
+    .hero-imagens {
+        gap: 1rem;
+    }
+    .hero-imagens img {
+        max-width: 150px;
+    }
+
+    .sobre {
+        gap: 20px;
+    }
+    .img-sobre {
+        width: 200px;
+    }
+
+    .footer-container {
+        justify-content: center;
+        text-align: center;
+    }
+    .footer-brand {
+        order: -1; /* Coloca a marca no topo no tablet */
+        flex-basis: 100%;
+        margin-bottom: 20px;
+    }
+    .footer-links,
+    .footer-doacao,
+    .footer-contato-info {
+        align-items: center;
+        text-align: center;
+    }
+    .links-container {
+        justify-content: center;
+    }
+}
+
+
+/* --- Mobile --- */
+@media (max-width: 768px) {
+    main {
+        padding-top: 77px; /* Altura do nav mobile */
+    }
+    
+    section {
+        padding: 60px 5%; /* Padding menor em mobile */
+    }
+
+    nav {
+        padding: 15px 20px;
+    }
+
+    /* --- Menu Mobile --- */
+    .menu {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Começa fora da tela */
+        width: 100%;
+        height: 100vh;
+        background-color: white;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 100px;
+        gap: 30px;
+        transition: 0.5s ease-out;
+    }
+
+    .menu.active {
+        right: 0; /* Entra na tela */
+    }
+
+    .menu a {
+        font-size: 1.5rem;
+    }
+
+    .btn {
+        display: block; /* Mostra o botão do menu */
+        z-index: 1000;
+    }
+
+    .btn.close-btn {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+    }
+    
+    .btn-2 {
+        display: none; /* Esconde o "Doe Agora" do nav */
+    }
+    /* --- Fim Menu Mobile --- */
+
+    .hero-headlines h1 {
+        font-size: 2rem;
+    }
+    .hero-headlines p {
+        font-size: 1.1rem;
+    }
+    .hero-headlines-buttons {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        padding: 0 20px;
+    }
+    .btn-3 {
+        width: 100%;
+    }
+    .hero-imagens {
+        /* Esconde imagens no mobile para economizar espaço */
+        display: none; 
+    }
+
+    .processo-headlines h1 {
+        font-size: 2rem;
+    }
+    .processo-headlines p {
+        font-size: 1rem;
+    }
+    .processo-img {
+        /* Para a imagem de 5 passos, melhor deixar rolar */
+        max-width: none;
+        width: 1000px;
+        border-radius: 0;
+    }
+
+    .pets-headlines h1 {
+        font-size: 2rem;
+    }
+
+    .sobre {
+        flex-direction: column-reverse; /* Imagem acima do texto */
+    }
+    .sobre-headlines {
+        text-align: center;
+    }
+    .sobre-headlines p {
+        font-size: 1.1rem;
+    }
+    .sobre-headlines button {
+        margin: 40px auto 0;
+    }
+    
+    .testimunhas h1 {
+        font-size: 2rem;
+    }
+
+    .footer-brand {
+        order: 0; /* Ordem normal no mobile */
+    }
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+    .footer-links,
+    .footer-doacao,
+    .footer-contato-info {
+        width: 100%;
+    }
+    .contato-info-item p {
+        font-size: 0.9rem; /* Evita quebra de email/telefone */
+    }
+
+
+}
+
+/*
+#########################################
+# Estilos Personalizados para o Juicer
+#########################################
+*/
+/*
+#########################################
+# Estilos Personalizados para o Juicer (Versão com Scroll Horizontal)
+#########################################
+*/
+
+/* --- 1. O "Envelope" que cria o Scroll --- */
+.juicer-scroll-wrapper {
+    /* O mais importante: cria o scroll horizontal */
+    overflow-x: auto;
+    /* Esconde a barra de scroll vertical (se houver) */
+    overflow-y: hidden;
+    
+    /* Melhora a aparência da barra de scroll (opcional, mas recomendado) */
+    padding-bottom: 20px;
+    margin-bottom: -20px;
+    
+    /* Truque para o scroll "colar" nas bordas da tela em mobile */
+    margin-left: -5%;
+    margin-right: -5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    
+    /* Adiciona um "freio" suave ao scroll em mobile */
+    -webkit-overflow-scrolling: touch;
+}
+
+/* --- 2. O Contêiner do Feed (a lista <ul>) --- */
+.juicer-feed {
+    /* Remove o estilo de lista */
+    list-style-type: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+
+    /* MUDANÇA PRINCIPAL: Usamos flexbox para forçar uma linha única */
+    display: flex !important;
+    flex-wrap: nowrap !important; /* Proíbe que os itens quebrem a linha */
+    
+    /* Mesmo espaçamento que você já usa */
+    gap: 28px;
+}
+
+/* --- 3. Cada Post (Card) do Instagram --- */
+.juicer-feed .juicer-post {
+    /* MUDANÇA: Define um tamanho fixo para os cards */
+    width: 350px; /* Tamanho do card */
+    flex-shrink: 0; /* Proíbe o card de "espremer" */
+
+    /* Estilo de card (igual ao que você já tinha) */
+    background: #fff !important;
+    border-radius: 15px !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08) !important;
+    border: none !important;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s ease-out;
+}
+
+/* --- Efeito de Hover (igual) --- */
+.juicer-feed .juicer-post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12) !important;
+}
+
+
+/* --- 4. A Mídia (Imagens E VÍDEOS) --- */
+/* ISSO CORRIGE O TAMANHO DOS VÍDEOS */
+.juicer-feed .juicer-image,
+.juicer-feed .juicer-video-wrapper { /* Pega IMAGENS e VÍDEOS */
+    width: 100%;
+    padding-top: 100%; /* Força a proporção 1:1 (quadrado) */
+    position: relative; /* Necessário para o iframe/video */
+    background-size: cover !important;
+    background-position: center !important;
+    display: block;
+    border-bottom: 1px solid #eee;
+}
+
+/* Faz o <video> ou <iframe> preencher o espaço de 1:1 */
+.juicer-feed .juicer-video-wrapper iframe,
+.juicer-feed .juicer-video-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que o vídeo cubra o espaço */
+}
+
+/* --- 5. Estilos de Texto e Links (maioria igual) --- */
+
+/* Conteúdo de Texto */
+.juicer-feed .juicer-post-content {
+    padding: 1.5rem !important;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Legenda do Post */
+.juicer-feed .juicer-post-caption {
+    font-family: "Nunito Sans", sans-serif !important;
+    font-size: 0.95rem !important;
+    color: #666 !important;
+    line-height: 1.5 !important;
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* Limita a 4 linhas */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 1rem;
+}
+
+/* Data e Ícone */
+.juicer-feed .juicer-poster {
+    font-family: "Nunito Sans", sans-serif !important;
+    font-size: 0.8rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    margin-top: auto;
+}
+
+.juicer-feed .juicer-poster .j-icon {
+    color: var(--accent) !important;
+    margin-right: 5px !important;
+}
+
+.juicer-feed .juicer-poster a {
+    text-decoration: none !important;
+    color: #888 !important;
+    transition: 0.2s ease;
+}
+
+.juicer-feed .juicer-poster a:hover {
+    color: var(--accent) !important;
+}
+
+/* --- 6. O link "Powered by Juicer" --- */
+/* Ele agora será o último item do scroll */
+.juicer-feed .juicer-branding {
+    /* Remove o estilo de grid antigo */
+    grid-column: auto;
+    
+    /* Faz ele parecer um card também */
+    width: 350px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.juicer-feed .juicer-branding a {
+    font-family: "Nunito Sans", sans-serif !important;
+    color: #aaa !important;
+    text-decoration: none !important;
+    transition: 0.2s ease;
+}
+
+.juicer-feed .juicer-branding a:hover {
+    color: var(--accent) !important;
+}
+/* --- Estilos do Modal de Pets --- */
+
+/* O card visível na página */
+.pet-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.pet-info-simple {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.pet-info-simple h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #333; 
+}
+
+.btn-details {
+    width: 100%;
+}
+
+/* O container do modal (popup) - escondido por padrão */
+.modal-container {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* O conteúdo do modal */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden; 
+}
+
+/* Botão de fechar */
+.modal-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #555;
+    font-size: 32px;
+    font-weight: bold;
+    border: none;
+    background: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+    color: #000;
+}
+
+/* Imagem dentro do modal */
+.img-pet-modal {
+    width: 50%;
+    object-fit: cover;
+    border-radius: 12px 0 0 12px;
+}
+
+/* Informações do pet dentro do modal (reutiliza .pet-info) */
+.modal-content .pet-info {
+    width: 50%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* --- Media Query para Telas Pequenas --- */
+@media (max-width: 768px) {
+    .modal-content {
+        flex-direction: column;
+        width: 95%;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .img-pet-modal {
+        width: 100%;
+        height: 250px; 
+        border-radius: 12px 12px 0 0;
+    }
+
+    .modal-content .pet-info {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .modal-close-btn {
+        top: 5px;
+        right: 15px;
+        color: white; /* Cor branca para melhor contraste com a imagem */
+        text-shadow: 0 0 5px rgba(0,0,0,0.5); /* Sombra para legibilidade */
+    }
+}
+/*
+#########################################
+# Estilos do Logo na Navbar
+#########################################
+*/
+.brand .logo-nav {
+    height: 100px; /* Altura do logo no header */
+    width: auto;
+    transition: all 0.3s ease;
+}
+
+/* Efeito de diminuir o logo no header fixo */
+nav.sticky .brand .logo-nav {
+    height: 70px;
+}
+
+@media (max-width: 768px) {
+    /* Ajuste do logo no menu mobile */
+    .brand .logo-nav {
+        height: 40px;
+    }
+}
+
+
+/*
+#########################################
+# Estilos do Floating Action Button (Widget)
+#########################################
+*/
+.floating-widget {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 990;
+    display: flex;
+    flex-direction: column-reverse; /* Ícones saem para cima */
+    align-items: center;
+}
+
+.floating-toggle {
+    width: 23vh;
+    height: 19vh;
+  /* Cor principal da marca */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+   
+    transition: transform 0.3s ease;
+    z-index: 992; /* Fica acima do menu */
+}
+
+.floating-toggle:hover {
+    transform: scale(1.1);
+}
+
+.floating-toggle img {
+    width: 22vh;
+    height: 17vh;
+    border-radius: 50%;
+}
+
+.floating-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 15px;
+    
+    /* Escondido por padrão */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 991;
+}
+
+/* Mostra o menu quando o widget está ativo */
+.floating-widget.active .floating-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Efeito opcional: gira o botão principal ao abrir */
+.floating-widget.active .floating-toggle {
+    transform: rotate(-45deg);
+}
+.floating-widget.active .floating-toggle:hover {
+    transform: rotate(-45deg) scale(1.1);
+}
+
+/* Estilo dos links (Instagram, WhatsApp, etc) */
+.floating-item {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: var(--black);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    text-decoration: none;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    transition: 0.2s ease;
+}
+
+.floating-item:hover {
+    background-color: var(--accent);
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Ajuste mobile para o widget não cobrir conteúdo */
+@media (max-width: 768px) {
+    .floating-widget {
+        bottom: 20px;
+        right: 20px;
+    }
+    .floating-toggle {
+        width: 60px;
+        height: 60px;
+    }
+    .floating-item {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+}

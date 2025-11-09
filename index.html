@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projeto Animal Campinas | Adoção de Cães e Gatos</title>
+    
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="index.js" defer></script>
+    <script src="https://unpkg.com/scrollreveal" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js" defer></script>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html" class="brand">
+            <img src="Gemini_Generated_Image_u9hzkwu9hzkwu9hz-removebg-preview.png" alt="Logo Projeto Animal Campinas" class="logo-nav">
+        </a>
+
+        <div class="menu">
+            <div class="btn">
+                <i class="fas fa-times close-btn"></i>
+            </div>
+            <a href="index.html">Home</a>
+            <a href="index.html#processo">Como Adotar</a>
+            <a href="pets.html">Pets</a>
+            <a href="index.html#rifas">Rifas</a>
+            <a href="index.html#sobre">Sobre</a>
+            <a href="index.html#historias">Finais Felizes</a>
+        </div>
+
+        <button class="btn-2" onclick="location.href='#doacao'">
+            <p>Doe Agora</p>
+            <i class="fa-solid fa-hand-holding-heart"></i>
+        </button>
+
+        <div class="btn">
+            <i class="fas fa-bars menu-btn"></i>
+        </div>
+    </nav>
+
+    <main>
+        <section class="heropage">
+            <div class="hero-headlines">
+                <h1>Encontre seu Pet hoje!</h1>
+                <p>
+                    Descubra o seu companheiro perfeito na nossa seleção de cães e gatos
+                    amorosos e carinhosos disponíveis para adoção.
+                </p>
+            </div>
+
+            <div class="hero-headlines-buttons">
+                <button class="btn-3" onclick="location.href='#pets'">Nossos Pets</button>
+                <button class="btn-3 btn-transparent" onclick="location.href='#doacao'">Doe Agora</button>
+            </div>
+
+            <div class="hero-imagens">
+                <img src="img/hero-img-1.png" alt="Cachorro feliz">
+                <img src="img/hero-img-2.png" alt="Gato feliz">
+                <img src="img/hero-img-3.png" alt="Cachorro e gato juntos">
+            </div>
+        </section>
+
+        <section class="processo" id="processo">
+            <div class="processo-headlines">
+                <h1>Como Funciona o Processo de Adoção</h1>
+                <p>Seguimos 5 passos para garantir uma adoção responsável e segura para o pet e para a família.</p>
+            </div>
+            <img src="WhatsApp Image 2025-11-09 at 14.35.13.jpeg" alt="Fluxograma do processo de adoção" class="processo-img">
+        </section>
+
+
+        <section class="pets" id="pets">
+            <div class="pets-headlines">
+                <i class="fa-solid fa-paw"></i>
+                <h1>Conheça nossos resgatados</h1>
+            </div>
+
+            <div class="pets-collection">
+                
+                <div class="pet-item">
+                    <img class="img-pet" src="WhatsApp Image 2025-11-09 at 14.23.01.jpeg" alt="Cachorro Felix para adoção">
+                    <div class="pet-info">
+                        <h3>Felix</h3>
+                        <div class="pet-tags">
+                            <span>11 anos</span>
+                            <span>7kg</span>
+                            <span>Porte Pequeno</span>
+                        </div>
+                        <p class="pet-description">
+                            Extremamente medroso. Infelizmente passou a vida toda negligenciado e hoje morre de medo de humanos!
+                        </p>
+                        <button class="btn-3 btn-adotar">Quero Adotar o Felix</button>
+                    </div>
+                </div>
+
+                <div class="pet-item">
+                    <img class="img-pet" src="img/pet-item-2.png" alt="Cachorro Capitão Shawks">
+                    <div class="pet-info">
+                        <h3>Capitão Shawks</h3>
+                        <div class="pet-tags">
+                            <span>2 anos</span>
+                            <span>12kg</span>
+                            <span>Porte Médio</span>
+                        </div>
+                        <p class="pet-description">
+                            Um cãozinho aventureiro e muito leal. Adora brincar de bolinha e passear no parque.
+                        </p>
+                        <button class="btn-3 btn-adotar">Quero Adotar o Capitão</button>
+                    </div>
+                </div>
+
+                <div class="pet-item">
+                    <img class="img-pet" src="img/pet-item-3.png" alt="Gato Dr. Miau">
+                    <div class="pet-info">
+                        <h3>Dr. Miau</h3>
+                        <div class="pet-tags">
+                            <span>4 anos</span>
+                            <span>5kg</span>
+                            <span>Gato</span>
+                        </div>
+                        <p class="pet-description">
+                            Muito calmo e carinhoso. Passa o dia dormindo e adora um carinho na barriga.
+                        </p>
+                        <button class="btn-3 btn-adotar">Quero Adotar o Dr. Miau</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <a href="pets.html" class="btn-3 btn-pets">
+                <p>Ver mais animais</p>
+                <i class="fa-solid fa-arrow-right-long"></i>
+            </a>
+        </section>
+
+        <section class="rifas-insta" id="rifas">
+            <div class="pets-headlines">
+                <i class="fa-brands fa-instagram"></i>
+                <h1>Rifas e Novidades</h1>
+                <p>Fique por dentro das nossas ações e ajude a causa!</p>
+            </div>
+
+            <div class="juicer-scroll-wrapper">
+                <ul class="juicer-feed" data-feed-id="projetoanimalcampinas"></ul>
+            </div>
+            
+        </section>
+
+        <section class="doacao" id="doacao">
+            <div class="doacao-container">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+                <h1>Ajude Nossa Causa</h1>
+                <p>Sua doação transforma vidas e nos ajuda a continuar nosso trabalho de resgate e cuidado. Contribua com qualquer valor!</p>
+                
+                <div class="doacao-pix">
+                    <h3>Nossa chave PIX (CNPJ):</h3>
+                    <div class="pix-key">
+                        <p id="pix-key-text">28.283.471/0001-23</p>
+                        <button class="btn-copy-pix" title="Copiar Chave PIX" onclick="navigator.clipboard.writeText('28.283.471/0001-23')">
+                            <i class="fa-regular fa-copy"></i>
+                        </button>
+                    </div>
+                    <h4>Projeto Animal Campinas</h4>
+                </div>
+                
+            </div>
+        </section>
+
+        <section class="sobre" id="sobre">
+            <div class="sobre-headlines">
+                <h1>Sobre nós</h1>
+                <p class="reveal-type" data-bg-color="#cccccc" data-fg-color="black">
+                    O <b>Projeto Animal Campinas</b> não é apenas um site de adoção; é um refúgio para animais
+                    em busca de um lar definitivo e para pessoas compassivas prontas para recebê-los de
+                    braços abertos.
+                </p>
+
+                <div class="sobre-info">
+                    <div class="sobre-info-item">
+                        <h5>100+</h5>
+                        <h6>Animais Salvos</h6>
+                    </div>
+                    <hr class="sobre-info-divider">
+                    <div class="sobre-info-item">
+                        <h5>100%</h5>
+                        <h6>Taxa de Adoção</h6>
+                    </div>
+                    <hr class="sobre-info-divider">
+                    <div class="sobre-info-item">
+                        <h5>5 stars</h5>
+                        <h6>Amor Comunitário</h6>
+                    </div>
+                </div>
+                <button class="btn-3" onclick="location.href='#pets'">Vamos começar</button>
+            </div>
+            <img class="img-sobre" src="Gemini_Generated_Image_u9hzkwu9hzkwu9hz-removebg-preview.png" alt="Logo Projeto Animal Campinas">
+        </section>
+
+        <section class="testimunhas" id="historias">
+            <h6>Nossas Adoções</h6>
+            <h1>Finais Felizes</h1>
+
+            <div class="testimunhas-container">
+                <div class="testimunhas-item">
+                    <div class="testimunhas-pessoa">
+                        <div class="testimunhas-nome">
+                            <img src="img/testimony-image-1.png" alt="Foto de Julia Maria">
+                            <div class="testimunhas-nome-item">
+                                <h4>Julia Maria</h4>
+                                <p>Adotou o Garfield</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-quote-right"></i>
+                    </div>
+                    <p class="testimunhas-text">
+                        "O processo de adoção foi super tranquilo e transparente. Hoje o Garfield é a alegria da casa!
+                        Obrigada, Projeto Animal Campinas!"
+                    </p>
+                </div>
+
+
+                <div class="testimunhas-item">
+                    <div class="testimunhas-pessoa">
+                        <div class="testimunhas-nome">
+                            <img src="img/testimony-image-2.png" alt="Foto de Mario José">
+                            <div class="testimunhas-nome-item">
+                                <h4>Mario José</h4>
+                                <p>Adotou o Max</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-quote-right"></i>
+                    </div>
+                    <p class="testimunhas-text">
+                        "Encontramos nosso melhor amigo aqui. A equipe foi muito atenciosa e deu todo o suporte
+                        necessário. Recomendamos de olhos fechados."
+                    </p>
+                </div>
+                <div class="testimunhas-item">
+                    <div class="testimunhas-pessoa">
+                        <div class="testimunhas-nome">
+                            <img src="img/testimony-image-3.png" alt="Foto de Ana Clara">
+                            <div class="testimunhas-nome-item">
+                                <h4>Ana Clara</h4>
+                                <p>Adotou a Luna</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-quote-right"></i>
+                    </div>
+                    <p class="testimunhas-text">
+                        "Desde a entrevista até a adoção, tudo foi feito com muito amor e seriedade. A Luna mudou
+                        nossas vidas para melhor!"
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="floating-widget">
+        <div class="floating-menu">
+            <a href="https://www.instagram.com/projetoanimalcampinas/" target="_blank" class="floating-item" title="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/5519999998888" target="_blank" class="floating-item" title="WhatsApp">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="#footer" class="floating-item" title="Contato">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+        </div>
+        <div class="floating-toggle">
+            <img src="Gemini_Generated_Image_u9hzkwu9hzkwu9hz-removebg-preview.png" alt="Logo" />
+        </div>
+    </div>
+
+
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <h2>Quick links</h2>
+                <div class="links-container">
+                    <div class="links">
+                        <a href="/">Home</a>
+                        <a href="index.html#sobre">Sobre</a>
+                        <a href="index.html#pets">Pets</a>
+                    </div>
+
+                    <div class="links">
+                        <a href="index.html#processo">Como Adotar</a>
+                        <a href="index.html#historias">Finais Felizes</a>
+                        <a href="index.html#footer">Contato</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-brand">
+                <h1>Projeto <b class="accent">Animal Campinas</b></h1>
+                <p>Encontre seu parceiro perfeito hoje mesmo!</p>
+                <div class="social">
+                    <a href="https://www.instagram.com/projetoanimalcampinas/" target="_blank" title="Instagram"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="/" title="Tiktok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="/" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="/" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-doacao" id="footer-doacao">
+                <h2>Ajude a Causa</h2>
+                <p>Sua doação salva vidas. Contribua via PIX!</p>
+                <div class="pix-info">
+                    <i class="fa-solid fa-key"></i>
+                    <p>CNPJ: 28.283.471/0001-23</p>
+                </div>
+                <p>Projeto Animal Campinas</p>
+            </div>
+
+            <div class="footer-contato-info">
+                <div class="contato-info-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <p>projetoanimalcampinas@gmail.com</p>
+                </div>
+                <div class="contato-info-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <p>+19-99999-8888</p>
+                </div>
+            </div>
+        </div>
+        <p class="copyright">All Rights Reserved to <b>Projeto Animal Campinas</b></p>
+    </footer>
+
+    <script type="text/javascript" src="https://www.juicer.io/embed/projetoanimalcampinas/embed-code.js" async defer></script>
+
+</body>
+
+</html>
