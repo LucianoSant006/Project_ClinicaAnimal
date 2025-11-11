@@ -61,6 +61,7 @@ nav {
 nav.sticky {
     background-color: white;
     filter: drop-shadow(5px 5px 10px #00a09a4a);
+    padding: 15px 50px; /* Adiciona transição suave de padding */
 }
 
 .brand {
@@ -192,6 +193,7 @@ nav.sticky {
     display: flex; /* Para centralizar ícones se houver */
     align-items: center;
     justify-content: center;
+    text-decoration: none; /* Adicionado para links */
     gap: 10px;
 }
 
@@ -452,6 +454,7 @@ nav.sticky {
     border-radius: 8px;
     padding: 0.5rem;
     margin-bottom: 1rem;
+    flex-wrap: wrap; /* Adicionado para mobile */
 }
 #pix-key-text {
     font-size: 1.2rem;
@@ -471,6 +474,7 @@ nav.sticky {
     cursor: pointer;
     font-size: 1rem;
     transition: 0.2s ease;
+    margin-top: 5px; /* Adicionado para mobile */
 }
 .btn-copy-pix:hover {
     background: #007a75;
@@ -752,6 +756,8 @@ footer {
     padding: 8px 12px;
     border-radius: 8px;
     margin-top: 5px;
+    flex-wrap: wrap; /* Adicionado */
+    justify-content: center; /* Adicionado */
 }
 
 .pix-info i {
@@ -793,6 +799,13 @@ footer {
 
 /* --- Tablet --- */
 @media (max-width: 1024px) {
+    nav {
+        padding: 15px 30px;
+    }
+    nav.sticky {
+        padding: 15px 30px;
+    }
+
     .menu {
         gap: 20px;
     }
@@ -857,6 +870,9 @@ footer {
     }
 
     nav {
+        padding: 15px 20px;
+    }
+    nav.sticky {
         padding: 15px 20px;
     }
 
@@ -970,14 +986,13 @@ footer {
         font-size: 0.9rem; /* Evita quebra de email/telefone */
     }
 
-
+    /* ATUALIZADO: Responsividade do Juicer Feed */
+    .juicer-feed .juicer-post,
+    .juicer-feed .juicer-branding {
+        width: 300px; /* Reduz o tamanho do card no mobile */
+    }
 }
 
-/*
-#########################################
-# Estilos Personalizados para o Juicer
-#########################################
-*/
 /*
 #########################################
 # Estilos Personalizados para o Juicer (Versão com Scroll Horizontal)
@@ -1153,20 +1168,23 @@ footer {
 }
 
 .pet-info-simple {
-    padding: 16px;
+    padding: 1.5rem; /* Padronizado com .pet-info */
     display: flex;
     flex-direction: column;
     gap: 12px;
+    flex-grow: 1;
 }
 
 .pet-info-simple h3 {
     font-size: 1.8rem;
-    font-weight: 700;
-    color: #333; 
+    font-weight: 800; /* Padronizado */
+    color: var(--black); /* Padronizado */
+    margin-bottom: 0.5rem; /* Padronizado */
 }
 
 .btn-details {
     width: 100%;
+    margin-top: auto; /* Empurra para o fim */
 }
 
 /* O container do modal (popup) - escondido por padrão */
@@ -1231,7 +1249,6 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 15px;
 }
 
 /* --- Media Query para Telas Pequenas --- */
@@ -1267,14 +1284,14 @@ footer {
 #########################################
 */
 .brand .logo-nav {
-    height: 100px; /* Altura do logo no header */
+    height: 50px; /* ATUALIZADO: Altura corrigida */
     width: auto;
     transition: all 0.3s ease;
 }
 
 /* Efeito de diminuir o logo no header fixo */
 nav.sticky .brand .logo-nav {
-    height: 70px;
+    height: 45px; /* ATUALIZADO: Altura corrigida */
 }
 
 @media (max-width: 768px) {
@@ -1301,15 +1318,16 @@ nav.sticky .brand .logo-nav {
 }
 
 .floating-toggle {
-    width: 23vh;
-    height: 19vh;
-  /* Cor principal da marca */
+    /* ATUALIZADO: Tamanho corrigido para px */
+    width: 70px;
+    height: 70px;
+    background-color: white; /* Fundo para o logo */
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-   
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra de volta */
     transition: transform 0.3s ease;
     z-index: 992; /* Fica acima do menu */
 }
@@ -1319,9 +1337,11 @@ nav.sticky .brand .logo-nav {
 }
 
 .floating-toggle img {
-    width: 22vh;
-    height: 17vh;
+    /* ATUALIZADO: Tamanho corrigido para preencher o botão */
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 .floating-menu {
@@ -1389,5 +1409,15 @@ nav.sticky .brand .logo-nav {
         width: 50px;
         height: 50px;
         font-size: 1.3rem;
+    }
+}
+/* --- Mobile --- */
+@media (max-width: 768px) {
+    /* ... outras regras ... */
+    
+    /* ATUALIZADO: Responsividade do Juicer Feed */
+    .juicer-feed .juicer-post,
+    .juicer-feed .juicer-branding {
+        width: 300px; /* Reduz o tamanho do card no mobile */
     }
 }
