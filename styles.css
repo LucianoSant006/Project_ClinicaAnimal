@@ -1421,3 +1421,54 @@ nav.sticky .brand .logo-nav {
         width: 300px; /* Reduz o tamanho do card no mobile */
     }
 }
+/* --- Seção Processo de Adoção --- */
+.processo {
+    text-align: center;
+    background-color: var(--light-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.processo-headlines h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 900;
+}
+.processo-headlines p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+/* * ESTA REGRA JÁ FAZ A IMAGEM SER RESPONSIVA:
+ * 'max-width: 100%' garante que ela nunca saia da tela.
+ * 'width: 800px' define o tamanho máximo que ela terá em telas grandes.
+ */
+.processo-img {
+    max-width: 100%;
+    width: 800px; /* Tamanho máximo em telas grandes */
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ... (o resto do seu CSS permanece o mesmo) ... */
+
+
+/* --- Mobile --- */
+@media (max-width: 768px) {
+    /* ... outras regras ... */
+
+    .processo-img {
+        /* * ATUALIZADO:
+         * Removi as regras 'max-width: none' e 'width: 800px' daqui.
+         * Agora, a regra principal (acima) será aplicada, e o 'max-width: 100%'
+         * fará a imagem diminuir para caber na tela do celular.
+         */
+        border-radius: 10px; /* Apenas mantendo um border-radius */
+    }
+    
+    /* ... outras regras ... */
+}
