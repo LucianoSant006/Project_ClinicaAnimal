@@ -1,3 +1,5 @@
+
+
 /* For Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
 
@@ -408,16 +410,30 @@ nav.sticky {
 }
 
 /* --- Seção Doação Dedicada --- */
+/* (Reutilizada para a seção #redes-sociais) */
 .doacao {
     background-color: var(--black);
     color: #fff;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+        margin-top: 40px;
+    
 }
 .doacao-container {
     max-width: 700px;
     margin: 0 auto;
+    max-width: 700px;
+    margin: 0 auto;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-.doacao-container .fa-hand-holding-heart {
+.doacao-container .fa-hand-holding-heart,
+.doacao-container .fa-instagram { /* Adicionado ícone do insta */
     font-size: 3rem;
     color: var(--accent);
     margin-bottom: 1rem;
@@ -638,7 +654,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 0; /* Removido margin-top, 'section' cuida disso */
+    margin-top: 0; 
     overflow: hidden;
 }
 
@@ -942,10 +958,11 @@ footer {
         font-size: 1rem;
     }
     .processo-img {
-        /* Para a imagem de 5 passos, melhor deixar rolar */
-        max-width: none;
-        width: 1000px;
-        border-radius: 0;
+        /* * ATUALIZADO: 
+         * A regra 'max-width: 100%' da classe principal 
+         * já cuida da responsividade.
+        */
+        border-radius: 10px;
     }
 
     .pets-headlines h1 {
@@ -1001,47 +1018,31 @@ footer {
 
 /* --- 1. O "Envelope" que cria o Scroll --- */
 .juicer-scroll-wrapper {
-    /* O mais importante: cria o scroll horizontal */
     overflow-x: auto;
-    /* Esconde a barra de scroll vertical (se houver) */
     overflow-y: hidden;
-    
-    /* Melhora a aparência da barra de scroll (opcional, mas recomendado) */
     padding-bottom: 20px;
     margin-bottom: -20px;
-    
-    /* Truque para o scroll "colar" nas bordas da tela em mobile */
     margin-left: -5%;
     margin-right: -5%;
     padding-left: 5%;
     padding-right: 5%;
-    
-    /* Adiciona um "freio" suave ao scroll em mobile */
     -webkit-overflow-scrolling: touch;
 }
 
 /* --- 2. O Contêiner do Feed (a lista <ul>) --- */
 .juicer-feed {
-    /* Remove o estilo de lista */
     list-style-type: none !important;
     padding: 0 !important;
     margin: 0 !important;
-
-    /* MUDANÇA PRINCIPAL: Usamos flexbox para forçar uma linha única */
     display: flex !important;
     flex-wrap: nowrap !important; /* Proíbe que os itens quebrem a linha */
-    
-    /* Mesmo espaçamento que você já usa */
     gap: 28px;
 }
 
 /* --- 3. Cada Post (Card) do Instagram --- */
 .juicer-feed .juicer-post {
-    /* MUDANÇA: Define um tamanho fixo para os cards */
     width: 350px; /* Tamanho do card */
     flex-shrink: 0; /* Proíbe o card de "espremer" */
-
-    /* Estilo de card (igual ao que você já tinha) */
     background: #fff !important;
     border-radius: 15px !important;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08) !important;
@@ -1052,7 +1053,6 @@ footer {
     transition: 0.3s ease-out;
 }
 
-/* --- Efeito de Hover (igual) --- */
 .juicer-feed .juicer-post:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12) !important;
@@ -1060,19 +1060,17 @@ footer {
 
 
 /* --- 4. A Mídia (Imagens E VÍDEOS) --- */
-/* ISSO CORRIGE O TAMANHO DOS VÍDEOS */
 .juicer-feed .juicer-image,
 .juicer-feed .juicer-video-wrapper { /* Pega IMAGENS e VÍDEOS */
     width: 100%;
     padding-top: 100%; /* Força a proporção 1:1 (quadrado) */
-    position: relative; /* Necessário para o iframe/video */
+    position: relative; 
     background-size: cover !important;
     background-position: center !important;
     display: block;
     border-bottom: 1px solid #eee;
 }
 
-/* Faz o <video> ou <iframe> preencher o espaço de 1:1 */
 .juicer-feed .juicer-video-wrapper iframe,
 .juicer-feed .juicer-video-wrapper video {
     position: absolute;
@@ -1080,12 +1078,10 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Garante que o vídeo cubra o espaço */
+    object-fit: cover; 
 }
 
-/* --- 5. Estilos de Texto e Links (maioria igual) --- */
-
-/* Conteúdo de Texto */
+/* --- 5. Estilos de Texto e Links --- */
 .juicer-feed .juicer-post-content {
     padding: 1.5rem !important;
     flex-grow: 1;
@@ -1093,7 +1089,6 @@ footer {
     flex-direction: column;
 }
 
-/* Legenda do Post */
 .juicer-feed .juicer-post-caption {
     font-family: "Nunito Sans", sans-serif !important;
     font-size: 0.95rem !important;
@@ -1108,7 +1103,6 @@ footer {
     margin-bottom: 1rem;
 }
 
-/* Data e Ícone */
 .juicer-feed .juicer-poster {
     font-family: "Nunito Sans", sans-serif !important;
     font-size: 0.8rem !important;
@@ -1133,12 +1127,8 @@ footer {
 }
 
 /* --- 6. O link "Powered by Juicer" --- */
-/* Ele agora será o último item do scroll */
 .juicer-feed .juicer-branding {
-    /* Remove o estilo de grid antigo */
     grid-column: auto;
-    
-    /* Faz ele parecer um card também */
     width: 350px;
     flex-shrink: 0;
     display: flex;
@@ -1168,7 +1158,7 @@ footer {
 }
 
 .pet-info-simple {
-    padding: 1.5rem; /* Padronizado com .pet-info */
+    padding: 1.5rem; 
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -1177,9 +1167,9 @@ footer {
 
 .pet-info-simple h3 {
     font-size: 1.8rem;
-    font-weight: 800; /* Padronizado */
-    color: var(--black); /* Padronizado */
-    margin-bottom: 0.5rem; /* Padronizado */
+    font-weight: 800; 
+    color: var(--black); 
+    margin-bottom: 0.5rem; 
 }
 
 .btn-details {
@@ -1284,14 +1274,14 @@ footer {
 #########################################
 */
 .brand .logo-nav {
-    height: 50px; /* ATUALIZADO: Altura corrigida */
+    height: 50px; 
     width: auto;
     transition: all 0.3s ease;
 }
 
 /* Efeito de diminuir o logo no header fixo */
 nav.sticky .brand .logo-nav {
-    height: 45px; /* ATUALIZADO: Altura corrigida */
+    height: 45px; 
 }
 
 @media (max-width: 768px) {
@@ -1318,7 +1308,6 @@ nav.sticky .brand .logo-nav {
 }
 
 .floating-toggle {
-    /* ATUALIZADO: Tamanho corrigido para px */
     width: 70px;
     height: 70px;
     background-color: white; /* Fundo para o logo */
@@ -1337,7 +1326,6 @@ nav.sticky .brand .logo-nav {
 }
 
 .floating-toggle img {
-    /* ATUALIZADO: Tamanho corrigido para preencher o botão */
     width: 100%;
     height: 100%;
     border-radius: 50%;
@@ -1410,65 +1398,4 @@ nav.sticky .brand .logo-nav {
         height: 50px;
         font-size: 1.3rem;
     }
-}
-/* --- Mobile --- */
-@media (max-width: 768px) {
-    /* ... outras regras ... */
-    
-    /* ATUALIZADO: Responsividade do Juicer Feed */
-    .juicer-feed .juicer-post,
-    .juicer-feed .juicer-branding {
-        width: 300px; /* Reduz o tamanho do card no mobile */
-    }
-}
-/* --- Seção Processo de Adoção --- */
-.processo {
-    text-align: center;
-    background-color: var(--light-bg);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.processo-headlines h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    font-weight: 900;
-}
-.processo-headlines p {
-    font-size: 1.1rem;
-    color: #555;
-    margin-bottom: 2rem;
-    max-width: 600px;
-}
-
-/* * ESTA REGRA JÁ FAZ A IMAGEM SER RESPONSIVA:
- * 'max-width: 100%' garante que ela nunca saia da tela.
- * 'width: 800px' define o tamanho máximo que ela terá em telas grandes.
- */
-.processo-img {
-    max-width: 100%;
-    width: 800px; /* Tamanho máximo em telas grandes */
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-
-/* ... (o resto do seu CSS permanece o mesmo) ... */
-
-
-/* --- Mobile --- */
-@media (max-width: 768px) {
-    /* ... outras regras ... */
-
-    .processo-img {
-        /* * ATUALIZADO:
-         * Removi as regras 'max-width: none' e 'width: 800px' daqui.
-         * Agora, a regra principal (acima) será aplicada, e o 'max-width: 100%'
-         * fará a imagem diminuir para caber na tela do celular.
-         */
-        border-radius: 10px; /* Apenas mantendo um border-radius */
-    }
-    
-    /* ... outras regras ... */
 }
