@@ -149,3 +149,116 @@ splitTypes.forEach((char, i) => {
         }
     );
 });
+
+/* ============================================= */
+/* FUNÇÃO PARA BUSCAR DADOS DO APOIA.SE      */
+/* ============================================= */
+document.addEventListener("DOMContentLoaded", () => {
+    // URL da API pública do APOIA.se para seu usuário
+    const API_URL =  "https://api.allorigins.win/raw?url=https://apoia.se/api/v1/users/projetoanimalcampinas";
+    
+    // Chaves para o cache no localStorage
+    const CACHE_KEY = "apoiaSeData";
+    const TIMESTAMP_KEY = "apoiaSeTimestamp";
+    const ONE_DAY_MS = 24 * 60 * 60 * 1000; // 24 horas em milissegundos
+
+    // Função para formatar valores em Reais (BRL)
+    const formatBRL = (value) => {
+        if (isNaN(value)) value = 0;
+        return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    };
+
+    // Função principal para buscar e exibir os dados
+    async function fetchApoiaSeData() {
+        const cachedData = localStorage.getItem(CACHE_KEY);
+        const cachedTimestamp = localStorage.getItem(TIMESTAMP_KEY);
+        const now = new Date().getTime();
+
+        // 1. Tenta carregar do cache se for válido (menos de 24h)
+        if (cachedData && cachedTimestamp && (now - parseInt(cachedTimestamp) < ONE_DAY_MS)) {
+            console.log("Carregando dados da campanha (do cache).");
+            const data = JSON.parse(cachedData);
+            updateCampaignUI(data);
+            return;
+        }
+
+        // 2. Se o cache for inválido ou não existir, busca na API
+        console.log("Buscando novos dados da campanha (da API).");
+        try {
+            const response = await fetch(API_URL);
+            if (!response.ok) {
+                throw new Error(`Erro na API: ${response.statusText}`);
+            }
+            const data = await response.json();
+
+            // Extrai os dados relevantes da primeira campanha
+            const campaign = data.campaigns[0]; 
+            if (!campaign) {
+                throw new Error("Dados da campanha não encontrados na resposta da API.");
+            }
+
+            const campaignData = {
+                raised: campaign.supports.total.value,
+                goal: campaign.goals[0].value,
+                supporters: campaign.supports.total.count
+            };
+
+            // 3. Salva os novos dados e o timestamp no cache
+            localStorage.setItem(CACHE_KEY, JSON.stringify(campaignData));
+            localStorage.setItem(TIMESTAMP_KEY, now.toString());
+
+            // 4. Atualiza a interface
+            updateCampaignUI(campaignData);
+
+        } // ... (dentro da função fetchApoiaSeData)
+ catch (error) {
+    console.error("Falha ao buscar ou atualizar dados da campanha:", error);
+    
+    // Se der erro, vamos avisar o usuário no HTML
+    const campaignStatsContainer = document.querySelector(".campaign-stats");
+    
+    if (campaignStatsContainer) {
+        // Remove o conteúdo "Carregando..." e insere uma mensagem de erro
+        campaignStatsContainer.innerHTML = `
+            <p style="color: #e74c3c; font-size: 1rem; padding: 20px;">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                Não foi possível carregar os dados da campanha no momento.
+            </p>
+            <a href="https://apoia.se/projetoanimalcampinas" target="_blank" class="btn-3 btn-apoia-se">
+                Ver Campanha no APOIA.se
+            </a>
+        `;
+        // Aplica estilo ao botão que sobrou
+        campaignStatsContainer.style.padding = "30px";
+    }
+}
+    }
+
+    // Função para atualizar o HTML com os dados
+    function updateCampaignUI(data) {
+        const { raised, goal, supporters } = data;
+        const percentage = ((raised / goal) * 100).toFixed(1);
+
+        // Seleciona os elementos no HTML
+        const raisedEl = document.getElementById("campaign-raised");
+        const goalEl = document.getElementById("campaign-goal");
+        const percentageEl = document.getElementById("campaign-percentage");
+        const supportersEl = document.getElementById("campaign-supporters");
+        const progressEl = document.getElementById("campaign-progress");
+
+        // Atualiza os valores e o estilo
+        if (raisedEl) raisedEl.innerText = formatBRL(raised);
+        if (goalEl) goalEl.innerText = formatBRL(goal);
+        if (percentageEl) percentageEl.innerText = `${percentage}%`;
+        if (supportersEl) supportersEl.innerText = supporters;
+        
+        if (progressEl) {
+            // Garante que a barra não passe de 100%
+            const progressWidth = Math.min(percentage, 100); 
+            progressEl.style.width = `${progressWidth}%`;
+        }
+    }
+
+    // Executa a função assim que a página carregar
+    fetchApoiaSeData();
+});

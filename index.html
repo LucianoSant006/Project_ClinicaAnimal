@@ -7,16 +7,15 @@
     <title>Projeto Animal Campinas | Adoção de Cães e Gatos</title>
     
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" ... />
 
-    <script src="index.js" defer></script>
     <script src="https://unpkg.com/scrollreveal" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js" defer></script>
+
+    <script src="index.js" defer></script> 
 </head>
 
 <body>
@@ -146,7 +145,45 @@
                 <i class="fa-solid fa-arrow-right-long"></i>
             </a>
         </section>
+<section class="apoia-se-campaign" id="apoia-se-campaign">
+    <div class="apoia-se-container">
+        <i class="fa-solid fa-heart-pulse"></i>
+        <h1>Nossa Campanha Mensal</h1>
+        <p>
+            Temos uma campanha de arrecadação mensal no APOIA.se para cobrir os custos 
+            básicos dos nossos resgates. Veja nosso progresso e nos ajude a bater a meta!
+        </p>
 
+        <div class="campaign-stats">
+            <div class="campaign-raised-amount">
+                <span id="campaign-raised">Carregando...</span>
+                <p>arrecadado por mês</p>
+            </div>
+            
+            <div class="progress-bar">
+                <div class="progress" id="campaign-progress" style="width: 0%;"></div>
+            </div>
+            
+            <div class="campaign-details">
+                <span class="campaign-goal">
+                    Meta: <b id="campaign-goal">R$ 0,00</b>
+                </span>
+                <span class="campaign-percentage">
+                    (<b id="campaign-percentage">0%</b> alcançado)
+                </span>
+            </div>
+            
+            <div class="campaign-supporters">
+                <i class="fa-solid fa-users"></i>
+                <b id="campaign-supporters">--</b> pessoas apoiando
+            </div>
+
+            <a href="https://apoia.se/projetoanimalcampinas" target="_blank" class="btn-3 btn-apoia-se">
+                Apoiar Agora no APOIA.se
+            </a>
+        </div>
+    </div>
+</section>
     
 
         <section class="doacao" id="doacao">
