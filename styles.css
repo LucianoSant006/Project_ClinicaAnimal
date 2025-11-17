@@ -18,8 +18,7 @@
 }
 
 html {
-    /* Garante que a rolagem suave funcione */
-    scroll-behavior: smooth;
+  
     /* Adiciona espaço no topo ao navegar por âncoras, evitando que o menu fixo cubra o título */
     scroll-padding-top: 100px;
 }
